@@ -1,0 +1,27 @@
+name: Remind Style Guide and Tech Stack
+on:
+  issues:
+    types: [assigned]
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Comment on issue
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue = context.payload.issue;
+            const assignee = issue.assignee;
+            const issueComment = `
+              Hey @${assignee.login} 👋, don't forget to follow the style guide listed in the [figma](https://www.figma.com/file/q8MLusrKhvMECSqEYl3yho/Will-Be-There-ADC-Hackathon-16?type=design&node-id=0-1&mode=design&t=TJ49Z6N3ZgJgCX3k-0) and use our existing tech stack, [sonner](https://sonner.emilkowal.ski) for displaying notifications, use the http module in `/src/lib/http.ts` to make requests to the backend, create any helper functions in `/src/lib/helper.ts` and use [shadcn-ui](https://ui.shadcn.com) for components.\nThat's it have a great time contributing 👋`;
+            github.issues.createComment({
+              issue_number: issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: issueComment
+            });
