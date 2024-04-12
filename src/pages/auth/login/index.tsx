@@ -45,7 +45,7 @@ export default function SignIn() {
         <div className="space-y-5 text-center">
           <h1 className="text-3xl font-bold">Sign In</h1>
           <p>
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link
               href="/auth/register"
               className="hover:text-[#0028e5 text-primary hover:text-secondary"
