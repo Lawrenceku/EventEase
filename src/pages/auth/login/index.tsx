@@ -15,7 +15,9 @@ const openSans = Open_Sans({ subsets: ["latin"] });
 
 const signInSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
-  password: z.string().min(6, { message: "Password must be at least 6 characters long." }),
+  password: z
+    .string()
+    .min(6, { message: "Password must be at least 6 characters long." }),
 });
 
 function onSubmit(values: z.infer<typeof signInSchema>) {
@@ -33,13 +35,21 @@ export default function SignIn() {
   });
 
   return (
-    <div className={cn("flex h-screen items-center justify-center", openSans.className)}>
+    <div
+      className={cn(
+        "flex h-screen items-center justify-center",
+        openSans.className,
+      )}
+    >
       <div className="mx-6 w-full space-y-5 sm:w-[20rem] xl:w-[30rem] 2xl:w-[40rem]">
         <div className="space-y-5 text-center">
           <h1 className="text-3xl font-bold">Sign In</h1>
           <p>
             Don't have an account?{" "}
-            <Link href="/auth/register" className="hover:text-[#0028e5 text-primary hover:text-secondary">
+            <Link
+              href="/auth/register"
+              className="hover:text-[#0028e5 text-primary hover:text-secondary"
+            >
               Sign Up
             </Link>
           </p>
