@@ -10,7 +10,8 @@ import FormInput from "@/components/form-input";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import { useState } from "react";
-
+import { FcGoogle } from "react-icons/fc";
+import { FaApple } from "react-icons/fa";
 const openSans = Open_Sans({ subsets: ["latin"] });
 
 const signInSchema = z.object({
@@ -80,6 +81,32 @@ export default function SignIn() {
             </Button>
           </form>
         </Form>
+        <div className="relative">
+          <div className="absolute inset-0 flex items-center">
+            <span className="w-full border-t" />
+          </div>
+          <div className="relative flex justify-center text-xs">
+            <span className="bg-background px-5 text-muted-foreground">or</span>
+          </div>
+        </div>
+        <Button
+          variant="outline"
+          type="button"
+          disabled={loading}
+          className="h-12 w-full gap-3"
+        >
+          <FcGoogle className="h-5 w-5" />
+          Sign In with Google
+        </Button>
+        <Button
+          variant="outline"
+          type="button"
+          disabled={loading}
+          className="h-12 w-full gap-3"
+        >
+          <FaApple className="h-5 w-5" />
+          Sign In with Apple
+        </Button>
       </div>
     </div>
   );
