@@ -13,6 +13,8 @@ import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 const openSans = Open_Sans({ subsets: ["latin"] });
+import Image from 'next/image'
+import LoginFrame from "..//..//..//..//public/loginframe.png"
 
 const signInSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -38,7 +40,7 @@ export default function SignIn() {
   return (
     <div className="flex h-screen">
       <div className="hidden md:block w-1/2">
-        <img src="img.jpg" alt="image" className="h-full w-full object-cover" />
+        <Image src={LoginFrame} alt="image" className="h-full w-full object-cover" />
       </div>
       <div className={cn(
         "flex justify-center items-center",
