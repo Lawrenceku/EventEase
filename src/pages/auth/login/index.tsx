@@ -39,8 +39,11 @@ export default function SignIn() {
 
   return (
     <div className="flex h-screen">
-      <div className="hidden md:block w-1/2">
-        <Image src={LoginFrame} alt="image" className="h-full w-full object-cover" />
+      <div className="hidden md:block w-1/2 ">
+      {/* <p className="inline-block bg-gradient-to-r from-[#002AFF] to-white bg-clip-text text-7xl font-semibold text-transparent">
+            Welcome Back
+          </p> */}
+        <Image src={LoginFrame} alt="image" className="h-full  object-cover" />
       </div>
       <div className={cn(
         "flex justify-center items-center",
@@ -48,7 +51,14 @@ export default function SignIn() {
         openSans.className,
       )}>
         <div className="mx-6 w-full space-y-5 sm:w-[20rem] xl:w-[30rem] 2xl:w-[40rem]">
-          <div className="space-y-5 text-center">
+          <div className="space-y-5 text-center m-auto flex flex-col">
+          <Image
+              alt={"the application logo"}
+              width={200}
+              height={50}
+              src={"/logo.png"}
+              className="mx-auto mb-4 mt-12"
+            />
             <h1 className="text-3xl font-bold">Sign In</h1>
             <p>
               Don&apos;t have an account?{" "}
