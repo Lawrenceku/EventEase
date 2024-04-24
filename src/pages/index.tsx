@@ -264,19 +264,19 @@ function Faqs(){
     <>
     <div className='my-8 flex flex-col items-center justify-center "'>
     {faqs.map(({ question, answer }, index) => (
-        <div className="w-3/4  border-2 border-black " key={index}>
+        <div className="w-3/4  border-1 border-black " key={index}>
           <button
             role="button"
             aria-expanded={showContent[index]}
             style={{ borderBottom: showContent[index] ? 'solid 2px' : '0px' }}
-            className="flex w-full items-center justify-between rounded-[5px] border-black  p-5 font-bold"
+            className="flex w-full items-center justify-between rounded-[5px] border-black  p-5 font-medium"
             onClick={() => toggleContent(index)}
           >
             {question}
             <span
               style={{ transform: `rotate(${showContent[index] ? '180deg' : '0'})` }}
               className="ml-4 text-4xl min-h-[24px] min-w-[24px] transition-transform ease-in-out"
-            >˅</span>
+            >v</span>
           </button>
           <div
             ref={contentRefs.current[index]}
@@ -299,10 +299,10 @@ function Newsletter(){
     </div>
     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className="relative max-w-2xl sm:mx-auto sm:max-w-xl md:max-w-2xl sm:text-center">
-            <h2 className="mb-6 font-sans text-4xl text-center font-bold tracking-tight sm:leading-none">
-              Subscribe to our newsletter
+            <h2 className="mb-6 font-sans text-5xl text-center font-medium tracking-tight sm:leading-none">
+              Subscribe to Newsletter
             </h2>
-            <p className="mb-6 text-bold md:text-lg">
+            <p className="mb-12 text-bold md:text-lg">
             Be the first to know about our exclusive offers by subscribing to our newsletter
             </p>
             <form
@@ -310,18 +310,18 @@ function Newsletter(){
               role="form"
             >
               <input
-                className="w-[30ch] rounded-md p-[10px] outline-none"
+                className="w-80 border border-gray-600 rounded bg-transparent p-[10px] outline-none"
                 type="text"
                 name="email"
                 id="email"
                 placeholder="Enter your email address"
               />
               <button
-                className="rounded  border-black  p-[10px] px-5 bg-blue-700"
+                className="rounded  border-black  p-[10px] px-5 text-white bg-blue-700"
                 type="submit"
                 aria-label="Submit Newsletter"
               >
-                Submit
+                Subscribe
               </button>
             </form>
         </div>
@@ -332,7 +332,7 @@ function Newsletter(){
 
 function Footer(){
   return(
-    <div className="mt-8  pt-9 bg-black text-white">
+    <div className="pt-9 bg-black text-white">
       <div className=" w-full ">
         <div className="flex flex-col justify-between sm:px-[18px] md:flex-row md:px-10">
           <div className="md:w-[316px]">
