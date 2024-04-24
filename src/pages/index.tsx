@@ -20,7 +20,11 @@ import ReviewCard from "@/components/ui/reviewCard";
 
 export default function Component() {
   const [navOpen, setNavOpen] = useState(false);
+  const home = useRef(null)
 
+  useEffect(() => {
+    home.current.focus();
+  }, []);
   return (
     <>
     <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-10">
@@ -37,22 +41,22 @@ export default function Component() {
             <span className="sr-only">Acme Inc</span>
           </Link>
           <div className="grid gap-2 py-6">
-            <Link className="flex w-full items-center py-2 text-lg font-semibold" href="#">
+            <Link ref={home} className="focus:text-blue-700 outline-none focus:underline flex w-full items-center py-2 text-lg font-semibold" href="#">
               Home
             </Link>
-            <Link className="flex w-full items-center py-2 text-lg font-semibold" href="#">
+            <Link className="focus:text-blue-700 outline-none focus:underline flex w-full items-center py-2 text-lg font-semibold" href="#">
               About
             </Link>
-            <Link className="flex w-full items-center py-2 text-lg font-semibold" href="#">
+            <Link className="focus:text-blue-700 outline-none focus:underline flex w-full items-center py-2 text-lg font-semibold" href="#">
               Features
             </Link>
-            <Link className="flex w-full items-center py-2 text-lg font-semibold" href="#">
+            <Link className="focus:text-blue-700 outline-none focus:underline flex w-full items-center py-2 text-lg font-semibold" href="#">
               How It Works
             </Link>
-            <Link className="flex w-full items-center py-2 text-lg font-semibold" href="#">
+            <Link className="focus:text-blue-700 outline-none focus:underlineflex w-full items-center py-2 text-lg font-semibold" href="#">
               Testimonials
             </Link>
-            <Link className="flex w-full items-center py-2 text-lg font-semibold" href="#">
+            <Link className="focus:text-blue-700 outline-none focus:underline flex w-full items-center py-2 text-lg font-semibold" href="#">
               FAQs
             </Link>
           </div>
@@ -62,24 +66,24 @@ export default function Component() {
         <MountainIcon className="h-6 w-6" />
         <span className="sr-only">RSVP</span>
       </Link>
-      <div className="hidden w-max-2xl ml-auto font-medium lg:flex gap-6 ">
-        <Link className='focus:text-blue-700 focus:underline' href='#'>Home</Link>
-        <Link className='focus:text-blue-700 focus:underline' href='#'>About</Link>
-        <Link className='focus:text-blue-700 focus:underline' href='#'>Features</Link>
-        <Link className='focus:text-blue-700 focus:underline' href='#'>How It Works</Link>
-        <Link className='focus:text-blue-700 focus:underline' href='#'>Testimonials</Link>
-        <Link className='focus:text-blue-700 focus:underline' href='#'>FAQs</Link>
+      <div className="hidden w-max-2xl pl-20 w-screen justify-center ml-auto font-medium lg:flex gap-6 ">
+        <Link ref={home} className='focus:text-blue-700 outline-none focus:underline mx-4' href='#'>Home</Link>
+        <Link className='focus:text-blue-700 outline-none focus:underline mx-4' href='#'>About</Link>
+        <Link className='focus:text-blue-700 outline-none focus:underline mx-4' href='#'>Features</Link>
+        <Link className='focus:text-blue-700 outline-none focus:underline mx-4' href='#'>How It Works</Link>
+        <Link className='focus:text-blue-700 outline-none focus:underline mx-4' href='#'>Testimonials</Link>
+        <Link className='focus:text-blue-700 outline-none focus:underline mx-4' href='#'>FAQs</Link>
         </div>
       <nav className="ml-auto lg:items-center  flex gap-6">
         <Link
           href="/auth/login"
-          className="group inline-flex h-9 w-max px-6 py-5 items-center justify-center rounded border text-blue-700 border-blue-700 bg-white  text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
+          className="group inline-flex h-9 w-max px-6 py-5 items-center justify-center rounded border text-blue-700 border-blue-700 bg-white  text-sm font-medium transition-colors hover:bg-blue-700 hover:text-white focus:bg-blue-900 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50 "
         >
           Log In
         </Link>
         <Link
           href="/auth/register"
-          className="group inline-flex h-9 px-6 py-5 w-max items-center justify-center rounded text-white bg-blue-700  text-sm font-medium border border-gray-300 transition-colors hover:bg-transparent hover:text-gray-900 focus:bg-transparent focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
+          className="group inline-flex h-9 px-6 py-5 w-max items-center justify-center rounded text-white bg-blue-700  text-sm font-medium border border-blue-700 transition-colors hover:bg-transparent hover:text-blue-700 focus:bg-transparent focus:text-blue-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 "
         >
           Sign Up
         </Link>
@@ -141,11 +145,11 @@ function HeroSection(){
   return(
 <section className=" dark:bg-gray-900 px-4 md:px-10">
     <div className="grid   py-8  lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-        <div className="mr-auto mt-10 lg:col-span-7">
-            <h1 style={{ lineHeight: '1.32' }} className=" mb-10  text-5xl font-medium md:text-5xl xl:text-6xl dark:text-white lg:text-left text-center">RSVP Like Never Before With <span className='underline text-blue-700'>Will Be There</span></h1>
-            <p className=" mb-6 lg:mb-10 leading-loose tracking-wide md:text-lg lg:text-xl dark:text-gray-400 lg:text-left text-center">Elevate your event game with Will Be There, where every ‘Yes’ and every click of the button is a step towards new adventures, new connections, and new beginnings</p>
-            <div className="flex justify-center lg:justify-start">
-              <Link href="#" className="r inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+        <div className="mr-auto mt-20 lg:col-span-7">
+            <h1 style={{ lineHeight: '1.32' }} className=" mb-16  text-5xl font-medium md:text-5xl xl:text-6xl dark:text-white lg:text-left text-center">RSVP Like Never Before With <span className='underline text-blue-700'>Will Be There</span></h1>
+            <p className=" mb-12 lg:mb-10 leading-loose tracking-wide md:text-lg lg:text-xl dark:text-gray-400 lg:text-left text-center">Elevate your event game with Will Be There, where every ‘Yes’ and every click of the button is a step towards new adventures, new connections, and new beginnings</p>
+            <div className="flex justify-center lg:justify-start ">
+              <Link href="#" className="r inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded bg-blue-700 hover:bg-blue-800  focus:ring-blue-900">
               Get started
               </Link>
             </div>
