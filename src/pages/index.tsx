@@ -12,6 +12,9 @@ import autoEvent from '../../public/auto-event.svg'
 import realTime from '../../public/real-time.svg'
 import guestList from '../../public/guest-list.svg'
 import linkedinIcon from '../../public/Linkedin.svg'
+import facebookIcon from '../../public/facebook.svg'
+import instagramIcon from '../../public/instagram.svg'
+import twitterIcon from '../../public/twitter.svg'
 import ReviewCard from "@/components/ui/reviewCard";
 
 
@@ -324,7 +327,7 @@ function Newsletter(){
                 placeholder="Enter your email address"
               />
               <button
-                className="rounded-r  border-black  p-[10px] px-5 text-white bg-blue-700"
+                className="rounded-r  border-black  p-[10px] px-5 text-white bg-[#0023CB]"
                 type="submit"
                 aria-label="Submit Newsletter"
               >
@@ -339,9 +342,9 @@ function Newsletter(){
 
 function Footer(){
   return(
-    <div className="pt-9 bg-black text-white">
+    <div className="pt-9 bg-black px-4 lg:px-16 text-white">
       <div className=" w-full ">
-        <div className="flex flex-col justify-between sm:px-[18px] md:flex-row md:px-10">
+        <div className="flex flex-col justify-between  md:flex-row ">
           <div className="md:w-[316px]">
             <p className="text-[18px] font-medium ">
               <h1 className=" font-extrabold flex items-center">
@@ -351,19 +354,19 @@ function Footer(){
             <p className="mt-[18px] text-[15px]  ">
             +2349145463534
             </p>
-            <p className="mt-[18px] text-[15px]  ">
+            <p className="mt-[18px] text-[15px]  leading-normal">
             willbethere@gmail.com
             </p>
             <div className="mt-[18px] flex gap-4">
             <a
             className="hover:scale-110" target="_blank"
-            href="/"><img alt="linkdin icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src={linkedinIcon} /></a><a
+            href="/"><Image alt="linkedin icon" loading="lazy"  width="36" height="36" decoding="async" data-nimg="1"  src={linkedinIcon} /></a><a
             className="hover:scale-110" target="_blank"
-            href="/"><img alt="instagram icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src="https://www.englishyaari.com/img/instagram1.svg" /></a><a
+            href="/"><Image alt="facebook icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src={facebookIcon} /></a><a
             className="hover:scale-110" target="_blank"
-            href=""><img alt="twitter icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src="https://www.englishyaari.com/img/twitter.svg" /></a><a
+            href=""><Image alt="instagram icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src={instagramIcon} /></a><a
             className="hover:scale-110" target="_blank"
-            href="https://www.youtube.com/"><img alt="youtube icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src="https://www.englishyaari.com/img/youtube.svg" /></a>
+            href="/"><Image alt="twitter icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src={twitterIcon} /></a>
             </div>
           </div>
       <div className="mt-6 flex w-full flex-col justify-between  sm:flex-row md:mt-0 md:max-w-[341px]">
@@ -375,13 +378,13 @@ function Footer(){
                 href="/">Home</a></li>
             <li className="mt-[15px]"><a
                 className="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
-                href="/our-tutors">About Us</a></li>
+                href="/">About Us</a></li>
             <li className="mt-[15px]"><a
                 className="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
-                href="/become-a-tutor">Features</a></li>
+                href="/">Features</a></li>
             <li className="mt-[15px]"><a
                 className="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
-                href="/plans-and-pricing">FAQs</a></li>
+                href="/">FAQs</a></li>
           </ul>
         </div>
         <div className="mt-6 flex flex-col gap-4 sm:mt-0">
@@ -397,8 +400,8 @@ function Footer(){
       </div>
         </div>
         <div className=''>
-        <hr className="mt-[30px] mx-auto border-0 w-[90%] bg-white h-px" />
-        <div className="flex items-center justify-center lg:justify-start pb-8 pt-[9px] md:py-8">
+        <hr className="mt-[30px] mx-auto border-0  bg-white h-px" />
+        <div className=" lg:justify-start pb-8 pt-[9px] md:py-8">
           <p className=" font-medium text-sm">
             2024 Will  Be There- All Rights Reserved
           </p>
