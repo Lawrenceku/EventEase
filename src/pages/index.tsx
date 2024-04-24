@@ -11,7 +11,9 @@ import eventCreation from '../../public/event-creation.svg'
 import autoEvent from '../../public/auto-event.svg'
 import realTime from '../../public/real-time.svg'
 import guestList from '../../public/guest-list.svg'
+import linkedinIcon from '../../public/Linkedin.svg'
 import ReviewCard from "@/components/ui/reviewCard";
+
 
 export default function Component() {
   const [navOpen, setNavOpen] = useState(false);
@@ -263,27 +265,32 @@ function Faqs(){
   return (
     <>
     <div className='my-8 flex flex-col items-center justify-center "'>
+      <h1 className='text-5xl font-medium m-20'>Frequently Asked Questions</h1>
     {faqs.map(({ question, answer }, index) => (
-        <div className="w-3/4  border-1 border-black " key={index}>
+        <div className="w-1/2    " key={index}>
           <button
             role="button"
             aria-expanded={showContent[index]}
-            style={{ borderBottom: showContent[index] ? 'solid 2px' : '0px' }}
-            className="flex w-full items-center justify-between rounded-[5px] border-black  p-5 font-medium"
+            
+            className="flex w-full items-center justify-between rounded border-b-[1px] border-[1px] m-4 text-lg border-gray-900  p-5 font-medium"
             onClick={() => toggleContent(index)}
           >
             {question}
             <span
               style={{ transform: `rotate(${showContent[index] ? '180deg' : '0'})` }}
               className="ml-4 text-4xl min-h-[24px] min-w-[24px] transition-transform ease-in-out"
-            >v</span>
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 9L12 15L18 9" stroke="#0B0B0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </button>
           <div
             ref={contentRefs.current[index]}
             style={{ height: showContent[index] ? contentHeight[index] : '0' }}
-            className="overflow-hidden rounded-[5px] bg-white font-bold transition-[height] ease-in-out"
+            className="overflow-hidden rounded-[5px]  font-bold transition-[height] ease-in-out duration-1000"
           >
-            <p className="p-5">{answer}</p>
+            <p className="p-5 ">{answer}</p>
           </div>
         </div>
       ))}     
@@ -310,7 +317,7 @@ function Newsletter(){
               role="form"
             >
               <input
-                className="w-80 border border-gray-600 rounded bg-transparent p-[10px] outline-none"
+                className="w-fill border border-gray-400 rounded bg-transparent p-[10px] outline-none"
                 type="text"
                 name="email"
                 id="email"
@@ -350,7 +357,7 @@ function Footer(){
             <div className="mt-[18px] flex gap-4">
             <a
             className="hover:scale-110" target="_blank"
-            href="/"><img alt="linkdin icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src="https://www.englishyaari.com/img/linkdin.svg" /></a><a
+            href="/"><img alt="linkdin icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src={linkedinIcon} /></a><a
             className="hover:scale-110" target="_blank"
             href="/"><img alt="instagram icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src="https://www.englishyaari.com/img/instagram1.svg" /></a><a
             className="hover:scale-110" target="_blank"
