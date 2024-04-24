@@ -268,14 +268,14 @@ function Faqs(){
   return (
     <>
     <div className='my-8 flex flex-col items-center justify-center "'>
-      <h1 className='text-5xl font-medium m-20'>Frequently Asked Questions</h1>
+      <h1 className='text-5xl text-center font-medium m-20'>Frequently Asked Questions</h1>
     {faqs.map(({ question, answer }, index) => (
-        <div className="w-1/2    " key={index}>
+        <div className="lg:w-[54vw] w-[90vw]" key={index}>
           <button
             role="button"
             aria-expanded={showContent[index]}
             
-            className="flex w-full items-center justify-between rounded border-b-[1px] border-[1px] m-4 text-lg border-gray-900  p-5 font-medium"
+            className="flex w-full text-left items-center justify-between rounded border-b-[1px] border-[1px] m-4 text-lg border-gray-900  p-5 font-medium"
             onClick={() => toggleContent(index)}
           >
             {question}
