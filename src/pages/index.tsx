@@ -309,22 +309,22 @@ function Newsletter(){
             <h2 className="mb-6 font-sans text-5xl text-center font-medium tracking-tight sm:leading-none">
               Subscribe to Newsletter
             </h2>
-            <p className="mb-12 text-bold md:text-lg">
+            <p className="mb-12 text-bold md:text-lg text-center ">
             Be the first to know about our exclusive offers by subscribing to our newsletter
             </p>
             <form
-              className="flex w-min items-center  border-2 mx-auto  "
+              className="flex  items-center w-full  mx-auto  "
               role="form"
             >
               <input
-                className="w-fill border border-gray-400 rounded bg-transparent p-[10px] outline-none"
+                className="w-full border border-gray-400 rounded-l bg-transparent p-[10px] outline-none"
                 type="text"
                 name="email"
                 id="email"
                 placeholder="Enter your email address"
               />
               <button
-                className="rounded  border-black  p-[10px] px-5 text-white bg-blue-700"
+                className="rounded-r  border-black  p-[10px] px-5 text-white bg-blue-700"
                 type="submit"
                 aria-label="Submit Newsletter"
               >
