@@ -1,35 +1,26 @@
-export default function ReviewCard () {
-    return(
-        <div className="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96">
-        <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg bg-clip-border rounded-xl h-80">
-          <Image src="https://docs.material-tailwind.com/img/team-3.jpg" alt="profile-picture" />
-        </div>
-        <div className="p-6 text-center">
-          <h4 className="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-            Natalie Paisley
-          </h4>
-          <p
-            className="block font-sans text-base antialiased font-medium leading-relaxed text-transparent bg-clip-text bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400">
-            CEO / Co-Founderikhoiiogoi
-          </p>
-        </div>
-        <div className="flex justify-center p-6 pt-2 gap-7">
-          <a href="#facebook"
-            className="block font-sans text-xl antialiased font-normal leading-relaxed text-transparent bg-clip-text bg-gradient-to-tr from-blue-600 to-blue-400">
-            <i className="fab fa-facebook" aria-hidden="true"></i>
-          </a>
-          <a href="#twitter"
-            className="block font-sans text-xl antialiased font-normal leading-relaxed text-transparent bg-clip-text bg-gradient-to-tr from-light-blue-600 to-light-blue-400">
-            <i
-              className="fab fa-twitter" aria-hidden="true">
-            </i>
-          </a>
-          <a href="#instagram"
-            className="block font-sans text-xl antialiased font-normal leading-relaxed text-transparent bg-clip-text bg-gradient-to-tr from-purple-600 to-purple-400"><i
-              className="fab fa-instagram" aria-hidden="true">
-            </i>
-          </a>
-        </div>
-      </div>
-    )
+import React from 'react';
+//import Image from 'next/image';
+//w-24 h-24 mb-3 rounded-full shadow
+interface ReviewCardProps {
+    Name: string;
+    Comment: string;
+    Rating: number;
+    Image:string;
 }
+
+const ReviewCard: React.FC<ReviewCardProps> = ({ Name, Comment, Rating, Image }) => {
+    return (
+        <div className="w-80 px-4 max-w-sm bg-white rounded shadow-[3px_3px_6px_rgba(0,0,0,0.2)] dark:bg-gray-800 dark:border-gray-700">
+            <div className="flex justify-end px-4 pt-4">
+            </div>
+            <div className="flex flex-col items-center pb-10">
+                <img className="" src={Image} />
+                <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white mb-8">{Name}</h5>
+                <span className="text-sm text-center text-gray-500 dark:text-gray-400">{Comment}</span>
+                <div className="flex mt-4 md:mt-6">{Rating}</div>
+            </div>
+        </div>
+    );
+};
+
+export default ReviewCard;

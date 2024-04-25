@@ -15,6 +15,9 @@ import linkedinIcon from '../../public/Linkedin.svg'
 import facebookIcon from '../../public/facebook.svg'
 import instagramIcon from '../../public/instagram.svg'
 import twitterIcon from '../../public/twitter.svg'
+// import tayo from '../../public/Tayo.svg'
+// import sarah from '../../public/sarah.svg'
+// import alex from '../../public/alexander.svg'
 import ReviewCard from "@/components/ui/reviewCard";
 
 
@@ -257,11 +260,14 @@ function NavigatePortal(){
 
 function Review(){
   return(
-    <>
-    <ReviewCard/>
-    <ReviewCard/>
-    <ReviewCard/>
-    </>
+    <div className="py-20 px-4">
+    <h1 className="font-medium text-center text-4xl my-16">What Our Clients Say</h1>
+    <div className="flex flex-wrap justify-around ">
+    <ReviewCard Name={'Tayo Olamide'} Comment={' \"Will Be There has revolutionized the way I plan events. Its robust features, coupled with excellent customer support, have made it my go-to platform for all my event needs.\"'} Rating={5} Image={'../../../public/Tayo.svg'} />
+    <ReviewCard Name={'Sarah Kelly'} Comment={" \"As an event organizer, I rely on tWill Be There to streamline my workflow. The ability to manage guest lists, send reminders, and track attendance has made my job so much easier.\""} Rating={4} Image={'../../../public/sarah.svg'} />
+    <ReviewCard Name={'Alexander Mark'} Comment={ " \"I've been using this platform for all my event needs, and it's been a game-changer. The user-friendly interface and comprehensive features have saved me so much time and effort.\""} Rating={5} Image={'../../../public/alexander.svg'} />
+    </div>
+    </div>
   )
 }
 
