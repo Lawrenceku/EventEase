@@ -356,8 +356,8 @@ function Faqs(){
 
   return (
     <>
-    <div className='my-8 flex flex-col items-center justify-center "'>
-      <h1 className='text-5xl text-center font-medium m-20'>Frequently Asked Questions</h1>
+    <div className='mb-8 flex flex-col items-center justify-center "'>
+      <h1 className='text-5xl text-center font-medium mt-12 m-20'>Frequently Asked Questions</h1>
     {faqs.map(({ question, answer }, index) => (
         <div className="lg:w-[54vw] w-[90vw]" key={index}>
           <button
