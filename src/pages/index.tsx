@@ -158,8 +158,8 @@ function HeroSection(){
 
 function AboutUs(){
   return(
-    <section className=" bg-[#E6EAFF] dark:bg-gray-900 px-4 md:px-10">
-          <h1 style={{ lineHeight: '1.32' }} className=" mb-1 w-full text-center text-4xl font-medium  dark:text-white">About Us</h1>
+    <section className=" bg-[#E6EAFF] dark:bg-gray-900 pt-10 px-4 md:px-10">
+          <h1 style={{ lineHeight: '1.32' }} className=" mb-1  w-full text-center text-4xl font-medium  dark:text-white">About Us</h1>
     <div className="grid   py-8  lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
        <div className=" lg:mt-0  lg:col-span-5 lg:flex sm:justify-center">
             <div className="flex justify-center">
