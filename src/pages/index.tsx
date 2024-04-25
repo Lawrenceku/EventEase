@@ -149,7 +149,7 @@ function HeroSection(){
             <h1 style={{ lineHeight: '1.32' }} className=" mb-16  text-5xl font-medium md:text-5xl xl:text-6xl dark:text-white lg:text-left text-center">RSVP Like Never Before With <span className='underline text-blue-700'>Will Be There</span></h1>
             <p className=" mb-12 lg:mb-10 leading-loose tracking-wide md:text-lg lg:text-xl dark:text-gray-400 lg:text-left text-center">Elevate your event game with Will Be There, where every ‘Yes’ and every click of the button is a step towards new adventures, new connections, and new beginnings</p>
             <div className="flex justify-center lg:justify-start ">
-              <Link href="#" className="r inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded bg-blue-700 hover:bg-blue-800  focus:ring-blue-900">
+              <Link href="/auth/register" className="r inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded bg-blue-700 hover:bg-blue-800 ">
               Get started
               </Link>
             </div>
@@ -165,57 +165,64 @@ function HeroSection(){
 function AboutUs(){
   return(
     <section className=" bg-[#E6EAFF] dark:bg-gray-900 px-4 md:px-10">
-          <h1 style={{ lineHeight: '1.32' }} className=" mb-1 w-full text-center text-5xl md:text-5xl xl:text-6xl dark:text-white">About Us</h1>
+          <h1 style={{ lineHeight: '1.32' }} className=" mb-1 w-full text-center text-4xl font-medium  dark:text-white">About Us</h1>
     <div className="grid   py-8  lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-       <div className=" lg:mt-0  lg:col-span-5 lg:flex lg:justify-center">
+       <div className=" lg:mt-0  lg:col-span-5 lg:flex sm:justify-center">
+            <div className="flex justify-center">
             <Image className="" src={aboutImg} />
-
+            </div>
         </div>  
-        <div className="mr-auto ml-4 mt-10 lg:col-span-7">
-            <p className=" mb-6 lg:mb-10 leading-loose tracking-wide md:text-lg lg:text-xl dark:text-gray-400">At Will Be There, we believe in the power of connection and celebration. Our platform is more than just an event planning tool; it's a vibrant community where every gathering becomes a moment to cherish.
-            <br/><br/><br/>
-            Founded with a passion for bringing people together, Will Be There simplifies event planning, making it effortless for organizers to create unforgettable experiences. From intimate gatherings to grand celebrations, our platform provides the tools and resources needed to turn your vision into reality.
+        <div className=" flex flex-col justify-between items-center lg:items-start mr-auto ml-4 mt-10 lg:col-span-7">
+            <p className=" mb-6 lg:mb-10 leading-loose tracking-wide text-center lg:text-left md:text-lg lg:text-xl dark:text-gray-400">
+              At Will Be There, we believe in the power of connection and celebration. Our platform is more than just an event planning tool; it's a vibrant community where every gathering becomes a moment to cherish.
+              </p>
+              <p className=" mb-6 lg:mb-10 leading-loose tracking-wide text-center lg:text-left md:text-lg lg:text-xl dark:text-gray-400">
+              Founded with a passion for bringing people together, Will Be There simplifies event planning, making it effortless for organizers to create unforgettable experiences. From intimate gatherings to grand celebrations, our platform provides the tools and resources needed to turn your vision into reality.
             Join us in celebrating life's moments, big and small. Together, let's create memories that will last a lifetime.</p>
-            <Link href="#" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+            <Link href="/auth/register" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded bg-blue-700 hover:bg-blue-900 ">
                 Start Now
             </Link>
-        </div>
-              
+        </div>  
     </div>
 </section>
-  )
-}
+)
+  }
+  
+
 
 function Features(){
   return(
     <>
-      <h1 style={{ lineHeight: '1.32' }} className=" mt-16 mb-10 w-full text-center text-5xl md:text-5xl xl:text-6xl dark:text-white">Our Unique Features</h1>
-          <section className="  dark:bg-gray-900 px-4 md:px-10 flex justify-among flex-wrap">
-        <div className="flex flex-col justify-center ">
-          <Image src={eventCreation}/>
-          <div>
+      <h1 style={{ lineHeight: '1.32' }} className=" mt-16 mb-10 w-full text-center text-4xl font-medium dark:text-white">Our Unique Features</h1>
+          <section className="  px-4 md:px-16 mb-24 flex justify-around items-start flex-wrap">
+        <div className="flex flex-col justify-center items-center w-72 m-8">
+          <div className="w-full">
+          <Image className="w-full" src={eventCreation}/>
+          </div>
+          <div className="text-center">
             <p className="font-medium">Event Creation and Management</p>
             <p>Simplify event planning with our user-friendly interface. With just a few clicks, you can create, edit, and manage your events from anywhere, anytime.</p>
           </div>
         </div>
-        <div className="">
+        <div className="flex flex-col justify-center items-center w-72 m-8">
           <Image src={autoEvent}/>
-          <div>
-            <p className="font-medium">Event Creation and Management</p>
-            <p>Simplify event planning with our user-friendly interface. With just a few clicks, you can create, edit, and manage your events from anywhere, anytime.</p>
-          </div>
-        </div><div className="">
-          <Image src={realTime}/>
-          <div>
-            <p className="font-medium">Event Creation and Management</p>
-            <p>Simplify event planning with our user-friendly interface. With just a few clicks, you can create, edit, and manage your events from anywhere, anytime.</p>
+          <div className="text-center">
+            <p className="font-medium">Automated Event Reminders</p>
+            <p>Effortlessly manage your schedule with automated event reminders. Receive timely notifications about event dates, times, and locations, ensuring you never miss an important occasion.</p>
           </div>
         </div>
-        <div className="">
+        <div className="flex flex-col justify-center items-center w-72 m-8">
+          <Image src={realTime}/>
+          <div className="text-center">
+            <p className="font-medium">Real Time Event Analytics</p>
+            <p>Stay informed and in control of your event with real-time event analytics. Instantly monitor attendance, engagement, and session popularity to ensure a seamless and successful event.</p>
+          </div>
+        </div>
+        <div className="flex flex-col justify-center items-center w-72 m-8 ">
           <Image src={guestList}/>
-          <div>
-            <p className="font-medium">Event Creation and Management</p>
-            <p>Simplify event planning with our user-friendly interface. With just a few clicks, you can create, edit, and manage your events from anywhere, anytime.</p>
+          <div className="text-center">
+            <p className="font-medium">Guest List Managers</p>
+            <p>Stay organized with our guest list management tool. Easily track RSVPs, manage guest details, and ensure a seamless event experience for all attendees</p>
           </div>
         </div>
     </section>
@@ -226,10 +233,23 @@ function Features(){
 
 function NavigatePortal(){
   return(
-    <section className=" bg-[#E6EAFF] h-80 dark:bg-gray-900 px-4 md:px-10">
-          <h1 style={{ lineHeight: '1.32' }} className=" mb-1 w-full text-center text-5xl md:text-5xl xl:text-6xl dark:text-white">How To Navigate The Portal</h1>
-    <div className="grid   py-8  lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-       
+    <section className=" bg-[#E6EAFF] dark:bg-gray-900 px-4 pt-10 md:px-10 pb-20">
+          <h1 style={{ lineHeight: '1.32' }} className=" mb-1 w-full text-center text-4xl font-medium dark:text-white">How To Navigate The Portal</h1>
+    <div className="mt-10 w-6/7s lg:w-1/2  mx-auto flex flex-col justify-center">
+       <div className="rounded-full w-full bg-blue-700 py-4 px-4 flex items-center justify-among">
+          <span className="text-blue-700 bg-white rounded-[50%] py-2 mx-4 p-5 text-lg font-medium border-1 ">1</span>
+          <span className='text-white font-medium text-xl'>Register or Login to the portal</span>
+       </div>
+       <hr style={{ transform: `rotate('180deg')` }} className="border-l-2 border-dashed border-0 ml-10 broken border-blue-700 h-16"/>
+       <div className=" rounded-full w-full border-[1px] bg-white border-blue-700 py-4 px-4 flex items-center justify-among">
+          <span className="text-blue-700 border-[1px] border-blue-700 bg-white rounded-[50%] py-2 mx-4 px-5 text-lg font-medium ">2</span>
+          <span className='font-medium text-xl'>Create events and share links</span>
+       </div>
+       <hr style={{ transform: `rotate('180deg')` }} className="border-l-2 border-dashed border-0 ml-10 broken border-blue-700 h-16"/>
+       <div className=" rounded-full w-full border-[1px] bg-white border-blue-700 py-4 px-4 flex items-center justify-among">
+          <span className="text-blue-700 border-[1px] border-blue-700 bg-white rounded-[50%] py-2 mx-4 px-5 text-lg font-medium ">3</span>
+          <span className=' font-medium text-xl'>Generate RSVP responses</span>
+       </div>
     </div>
 </section>
   )
@@ -237,7 +257,11 @@ function NavigatePortal(){
 
 function Review(){
   return(
+    <>
     <ReviewCard/>
+    <ReviewCard/>
+    <ReviewCard/>
+    </>
   )
 }
 
