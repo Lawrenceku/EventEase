@@ -15,10 +15,10 @@ import linkedinIcon from '../../public/Linkedin.svg'
 import facebookIcon from '../../public/facebook.svg'
 import instagramIcon from '../../public/instagram.svg'
 import twitterIcon from '../../public/twitter.svg'
-// import tayo from '../../public/Tayo.svg'
-// import sarah from '../../public/sarah.svg'
-// import alex from '../../public/alexander.svg'
-import ReviewCard from "@/components/ui/reviewCard";
+import star from '../../public/star.svg'
+import tayo from '../../public/Tayo.svg'
+import sarah from '../../public/sarah.svg'
+import alex from '../../public/alexander.svg'
 
 
 export default function Component() {
@@ -96,7 +96,11 @@ export default function Component() {
     <AboutUs/>
     <Features/>
     <NavigatePortal/>
-    <Review/>
+    <div className="py-20 px-4">
+    <div className="flex flex-wrap justify-around ">
+    <ReviewCard/>
+    </div>
+    </div>
     <Faqs/>
     <Newsletter/>
     <Footer/>
@@ -127,20 +131,7 @@ function MenuIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
 
 function MountainIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
-    </svg>
+        <span className="font-bold text-lg w-40 text-blue-900">WILL <span className="text-black" >BE THERE</span></span>
   );
 }
 
@@ -258,18 +249,82 @@ function NavigatePortal(){
   )
 }
 
-function Review(){
-  return(
-    <div className="py-20 px-4">
-    <h1 className="font-medium text-center text-4xl my-16">What Our Clients Say</h1>
+function ReviewCard(){
+
+  return (
+    <div className="py-8 pb-2 px-4">
+    <h1 className="font-medium text-center text-4xl mb-16">What Our Clients Say</h1>
     <div className="flex flex-wrap justify-around ">
-    <ReviewCard Name={'Tayo Olamide'} Comment={' \"Will Be There has revolutionized the way I plan events. Its robust features, coupled with excellent customer support, have made it my go-to platform for all my event needs.\"'} Rating={5} Image={'../../../public/Tayo.svg'} />
-    <ReviewCard Name={'Sarah Kelly'} Comment={" \"As an event organizer, I rely on tWill Be There to streamline my workflow. The ability to manage guest lists, send reminders, and track attendance has made my job so much easier.\""} Rating={4} Image={'../../../public/sarah.svg'} />
-    <ReviewCard Name={'Alexander Mark'} Comment={ " \"I've been using this platform for all my event needs, and it's been a game-changer. The user-friendly interface and comprehensive features have saved me so much time and effort.\""} Rating={5} Image={'../../../public/alexander.svg'} />
+
+    <div className="w-80 px-4 m-8 max-w-sm bg-white rounded shadow-[3px_3px_6px_rgba(0,0,0,0.2)] dark:bg-gray-800 dark:border-gray-700">
+      <div className="flex justify-end px-4 pt-4">
+      </div>
+      <div className="flex flex-col items-center pb-10">
+        <Image
+          alt="image"
+          height={80}
+          width={80}
+          src={tayo}
+        />
+        <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white mb-8">Tayo Olamide</h5>
+        <span className="text-sm text-center text-gray-500 dark:text-gray-400">"Will Be There has revolutionized the way I plan events. Its robust features, coupled with excellent customer support, have made it my go-to platform for all my event needs."</span>
+        <div className="flex mt-4 md:mt-6">
+          {[...Array(5)].map((_, index) => (
+            <Image key={index} src={star} alt="star" className={`${index < 5 ? 'text-[#FFA500]' : ''}`} />
+          ))}
+        </div>
+      </div>
     </div>
+
+     <div className="w-80 px-4 m-8 max-w-sm bg-white rounded shadow-[3px_3px_6px_rgba(0,0,0,0.2)] dark:bg-gray-800 dark:border-gray-700">
+     <div className="flex justify-end px-4 pt-4">
+     </div>
+     <div className="flex flex-col items-center pb-10">
+       <Image
+         alt="image"
+         height={80}
+         width={80}
+         src={sarah}
+       />
+       <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white mb-8">Sarah Kelly</h5>
+       <span className="text-sm text-center text-gray-500 dark:text-gray-400">"As an event organizer, I rely on tWill Be There to streamline my workflow. The ability to manage guest lists, send reminders, and track attendance has made my job so much easier."</span>
+       <div className="flex mt-4 md:mt-6">
+        {[...Array(4)].map((_, index) => (
+          <Image key={index} src={star} alt="star" className={`${index < 4 ? 'text-[#FFA500]' : ''}`} />
+        ))}
+        <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 0.5L14.6942 8.7918H23.4127L16.3593 13.9164L19.0534 22.2082L12 17.0836L4.94658 22.2082L7.64074 13.9164L0.587322 8.7918H9.30583L12 0.5Z" fill="#bababa"/>
+        </svg>
+      </div>
+     </div>
+   </div>
+
+    <div className="w-80 px-4 m-8 max-w-sm bg-white rounded shadow-[3px_3px_6px_rgba(0,0,0,0.2)] dark:bg-gray-800 dark:border-gray-700">
+    <div className="flex justify-end px-4 pt-4">
     </div>
-  )
-}
+    <div className="flex flex-col items-center pb-10">
+      <Image
+        alt="image"
+        height={80}
+        width={80}
+        src={alex}
+      />
+      <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white mb-8">Alexander Mark</h5>
+      <span className="text-sm text-center text-gray-500 dark:text-gray-400">"I've been using this platform for all my event needs, and it's been a game-changer. The user-friendly interface and comprehensive features have saved me so much time and effort."</span>
+      <div className="flex mt-4 md:mt-6">
+    {[...Array(5)].map((_, index) => (
+      <Image key={index} src={star} alt="star" className={`${index < 5 ? 'text-[#FFA500]' : ''}`} />
+    ))}
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+  </div>
+  );
+};
+
 
 function Faqs(){
   const [showContent, setShowContent] = useState({});
