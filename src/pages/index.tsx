@@ -4,7 +4,6 @@ import Link from "next/link";
 import { JSX, SVGProps, useState,useEffect, useRef } from "react";
 import Image from "next/image";
 import {faqs} from '../faqs'
-import reviewCard from "@/components/ui/reviewCard";
 import heroPicture from '../../public/hero-picture.svg'
 import aboutImg from '../../public/about-us.svg'
 import eventCreation from '../../public/event-creation.svg'
@@ -44,7 +43,7 @@ export default function Component() {
             <span className="sr-only">Acme Inc</span>
           </Link>
           <div className="grid gap-2 py-6">
-            <Link ref={home} className="focus:text-blue-700 outline-none focus:underline flex w-full items-center py-2 text-lg font-semibold" href="#">
+            <Link className="focus:text-blue-700 outline-none focus:underline flex w-full items-center py-2 text-lg font-semibold" href="#">
               Home
             </Link>
             <Link className="focus:text-blue-700 outline-none focus:underline flex w-full items-center py-2 text-lg font-semibold" href="#">
@@ -135,13 +134,15 @@ function MountainIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) 
   );
 }
 
+
+
 function HeroSection(){
   return(
 <section className=" dark:bg-gray-900 px-4 md:px-10">
     <div className="grid   py-8  lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div className="mr-auto mt-20 lg:col-span-7">
             <h1 style={{ lineHeight: '1.32' }} className=" mb-16  text-5xl font-medium md:text-5xl xl:text-6xl dark:text-white lg:text-left text-center">RSVP Like Never Before With <span className='underline text-blue-700'>Will Be There</span></h1>
-            <p className=" mb-12 lg:mb-10 leading-loose tracking-wide md:text-lg lg:text-xl dark:text-gray-400 lg:text-left text-center">Elevate your event game with Will Be There, where every ‘Yes’ and every click of the button is a step towards new adventures, new connections, and new beginnings</p>
+            <p className=" mb-12 lg:mb-10 leading-loose tracking-wide md:text-lg lg:text-xl dark:text-gray-400 lg:text-left text-center">Elevate your event game with Will Be There, where every `Yes` and every click of the button is a step towards new adventures, new connections, and new beginnings</p>
             <div className="flex justify-center lg:justify-start ">
               <Link href="/auth/register" className="r inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded bg-blue-700 hover:bg-blue-800 ">
               Get started
@@ -149,7 +150,7 @@ function HeroSection(){
             </div>
         </div>
         <div className="hidden  lg:mt-0 ml-4 lg:col-span-5 lg:flex lg:justify-end">
-            <Image className="w-full" src={heroPicture} />
+            <Image alt="" className="w-full" src={heroPicture} />
         </div>                
     </div>
 </section>
@@ -163,16 +164,16 @@ function AboutUs(){
     <div className="grid   py-8  lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
        <div className=" lg:mt-0  lg:col-span-5 lg:flex sm:justify-center">
             <div className="flex justify-center">
-            <Image className="" src={aboutImg} />
+            <Image alt="" className="" src={aboutImg} />
             </div>
         </div>  
         <div className=" flex flex-col justify-between items-center lg:items-start mr-auto ml-4 mt-10 lg:col-span-7">
             <p className=" mb-6 lg:mb-10 leading-loose tracking-wide text-center lg:text-left md:text-lg lg:text-xl dark:text-gray-400">
-              At Will Be There, we believe in the power of connection and celebration. Our platform is more than just an event planning tool; it's a vibrant community where every gathering becomes a moment to cherish.
+              At Will Be There, we believe in the power of connection and celebration. Our platform is more than just an event planning tool; it&apos;s a vibrant community where every gathering becomes a moment to cherish.
               </p>
               <p className=" mb-6 lg:mb-10 leading-loose tracking-wide text-center lg:text-left md:text-lg lg:text-xl dark:text-gray-400">
               Founded with a passion for bringing people together, Will Be There simplifies event planning, making it effortless for organizers to create unforgettable experiences. From intimate gatherings to grand celebrations, our platform provides the tools and resources needed to turn your vision into reality.
-            Join us in celebrating life's moments, big and small. Together, let's create memories that will last a lifetime.</p>
+            Join us in celebrating life&apos;s moments, big and small. Together, let&apos;s create memories that will last a lifetime.</p>
             <Link href="/auth/register" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded bg-blue-700 hover:bg-blue-900 ">
                 Start Now
             </Link>
@@ -191,7 +192,7 @@ function Features(){
           <section className="  px-4 md:px-16 mb-24 flex justify-around items-start flex-wrap">
         <div className="flex flex-col justify-center items-center w-72 m-8">
           <div className="w-full">
-          <Image className="w-full" src={eventCreation}/>
+          <Image alt="" className="w-full" src={eventCreation}/>
           </div>
           <div className="text-center">
             <p className="font-medium">Event Creation and Management</p>
@@ -199,21 +200,21 @@ function Features(){
           </div>
         </div>
         <div className="flex flex-col justify-center items-center w-72 m-8">
-          <Image src={autoEvent}/>
+          <Image alt="" src={autoEvent}/>
           <div className="text-center">
             <p className="font-medium">Automated Event Reminders</p>
             <p>Effortlessly manage your schedule with automated event reminders. Receive timely notifications about event dates, times, and locations, ensuring you never miss an important occasion.</p>
           </div>
         </div>
         <div className="flex flex-col justify-center items-center w-72 m-8">
-          <Image src={realTime}/>
+          <Image alt="" src={realTime}/>
           <div className="text-center">
             <p className="font-medium">Real Time Event Analytics</p>
             <p>Stay informed and in control of your event with real-time event analytics. Instantly monitor attendance, engagement, and session popularity to ensure a seamless and successful event.</p>
           </div>
         </div>
         <div className="flex flex-col justify-center items-center w-72 m-8 ">
-          <Image src={guestList}/>
+          <Image alt="" src={guestList}/>
           <div className="text-center">
             <p className="font-medium">Guest List Managers</p>
             <p>Stay organized with our guest list management tool. Easily track RSVPs, manage guest details, and ensure a seamless event experience for all attendees</p>
@@ -267,10 +268,10 @@ function ReviewCard(){
           src={tayo}
         />
         <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white mb-8">Tayo Olamide</h5>
-        <span className="text-sm text-center text-gray-500 dark:text-gray-400">"Will Be There has revolutionized the way I plan events. Its robust features, coupled with excellent customer support, have made it my go-to platform for all my event needs."</span>
+        <span className="text-sm text-center text-gray-500 dark:text-gray-400">&quot;Will Be There has revolutionized the way I plan events. It&apos;s robust features, coupled with excellent customer support, have made it my go-to platform for all my event needs.&quot;</span>
         <div className="flex mt-4 md:mt-6">
           {[...Array(5)].map((_, index) => (
-            <Image key={index} src={star} alt="star" className={`${index < 5 ? 'text-[#FFA500]' : ''}`} />
+            <Image  key={index} src={star} alt="star" className={`${index < 5 ? 'text-[#FFA500]' : ''}`} />
           ))}
         </div>
       </div>
@@ -287,10 +288,10 @@ function ReviewCard(){
          src={sarah}
        />
        <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white mb-8">Sarah Kelly</h5>
-       <span className="text-sm text-center text-gray-500 dark:text-gray-400">"As an event organizer, I rely on tWill Be There to streamline my workflow. The ability to manage guest lists, send reminders, and track attendance has made my job so much easier."</span>
+       <span className="text-sm text-center text-gray-500 dark:text-gray-400">&quot;As an event organizer, I rely on Will Be There to streamline my workflow. The ability to manage guest lists, send reminders, and track attendance has made my job so much easier.&quot;</span>
        <div className="flex mt-4 md:mt-6">
         {[...Array(4)].map((_, index) => (
-          <Image key={index} src={star} alt="star" className={`${index < 4 ? 'text-[#FFA500]' : ''}`} />
+          <Image  key={index} src={star} alt="star" className={`${index < 4 ? 'text-[#FFA500]' : ''}`} />
         ))}
         <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 0.5L14.6942 8.7918H23.4127L16.3593 13.9164L19.0534 22.2082L12 17.0836L4.94658 22.2082L7.64074 13.9164L0.587322 8.7918H9.30583L12 0.5Z" fill="#bababa"/>
@@ -310,10 +311,10 @@ function ReviewCard(){
         src={alex}
       />
       <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white mb-8">Alexander Mark</h5>
-      <span className="text-sm text-center text-gray-500 dark:text-gray-400">"I've been using this platform for all my event needs, and it's been a game-changer. The user-friendly interface and comprehensive features have saved me so much time and effort."</span>
+      <span className="text-sm text-center text-gray-500 dark:text-gray-400">&quot;I&apos;ve been using this platform for all my event needs, and it&apos;s been a game-changer. The user-friendly interface and comprehensive features have saved me so much time and effort.&quot;</span>
       <div className="flex mt-4 md:mt-6">
     {[...Array(5)].map((_, index) => (
-      <Image key={index} src={star} alt="star" className={`${index < 5 ? 'text-[#FFA500]' : ''}`} />
+      <Image alt='' key={index} src={star} className={`${index < 5 ? 'text-[#FFA500]' : ''}`} />
     ))}
   </div>
 
@@ -373,7 +374,7 @@ function Faqs(){
               className="ml-4 text-4xl min-h-[24px] min-w-[24px] transition-transform ease-in-out"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 9L12 15L18 9" stroke="#0B0B0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 9L12 15L18 9" stroke="#0B0B0B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </span>
           </button>
@@ -436,9 +437,9 @@ function Footer(){
         <div className="flex flex-col justify-between  md:flex-row ">
           <div className="md:w-[316px]">
             <p className="text-[18px] font-medium ">
-              <h1 className=" font-extrabold flex items-center">
+              <span className=" font-extrabold flex items-center">
                 WILL BE THERE
-              </h1>
+              </span>
             </p>
             <p className="mt-[18px] text-[15px]  ">
             +2349145463534
@@ -447,43 +448,43 @@ function Footer(){
             willbethere@gmail.com
             </p>
             <div className="mt-[18px] flex gap-4">
-            <a
+            <Link
             className="hover:scale-110" target="_blank"
-            href="/"><Image alt="linkedin icon" loading="lazy"  width="36" height="36" decoding="async" data-nimg="1"  src={linkedinIcon} /></a><a
+            href="/"><Image  alt="linkedin icon" loading="lazy"  width="36" height="36" decoding="async" data-nimg="1"  src={linkedinIcon} /></Link><Link
             className="hover:scale-110" target="_blank"
-            href="/"><Image alt="facebook icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src={facebookIcon} /></a><a
+            href="/"><Image  alt="facebook icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src={facebookIcon} /></Link><Link
             className="hover:scale-110" target="_blank"
-            href=""><Image alt="instagram icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src={instagramIcon} /></a><a
+            href=""><Image  alt="instagram icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src={instagramIcon} /></Link><Link
             className="hover:scale-110" target="_blank"
-            href="/"><Image alt="twitter icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src={twitterIcon} /></a>
+            href="/"><Image  alt="twitter icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src={twitterIcon} /></Link>
             </div>
           </div>
       <div className="mt-6 flex w-full flex-col justify-between  sm:flex-row md:mt-0 md:max-w-[341px]">
         <div className="">
           <p className="text-deutziawhite font-inter text-[18px] font-medium leading-normal">Company</p>
           <ul>
-            <li className="mt-[15px]"><a
+            <li className="mt-[15px]"><Link
                 className="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
-                href="/">Home</a></li>
-            <li className="mt-[15px]"><a
+                href="/">Home</Link></li>
+            <li className="mt-[15px]"><Link
                 className="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
-                href="/">About Us</a></li>
-            <li className="mt-[15px]"><a
+                href="/">About Us</Link></li>
+            <li className="mt-[15px]"><Link
                 className="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
-                href="/">Features</a></li>
-            <li className="mt-[15px]"><a
+                href="/">Features</Link></li>
+            <li className="mt-[15px]"><Link
                 className="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
-                href="/">FAQs</a></li>
+                href="/">FAQs</Link></li>
           </ul>
         </div>
         <div className="mt-6 flex flex-col gap-4 sm:mt-0">
           <p className="text-deutziawhite font-inter text-[18px] font-medium">Legal</p>
           <div className="flex gap-4 sm:flex-col">
-            <a target="_blank"
-              href="#">Terms of Service</a>
-              <a
+            <Link target="_blank"
+              href="#">Terms of Service</Link>
+              <Link 
               target="_blank"
-              href="#">Privacy Policy</a>
+              href="#">Privacy Policy</Link>
           </div>
         </div>
       </div>
