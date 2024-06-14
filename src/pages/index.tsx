@@ -22,10 +22,11 @@ import alex from '../../public/alexander.svg'
 
 export default function Component() {
   const [navOpen, setNavOpen] = useState(false);
-  const home = useRef(null)
+  const home = useRef<HTMLAnchorElement>(null)
 
   useEffect(() => {
-    home.current.focus();
+      home.current?.focus();
+
   }, []);
   return (
     <>
@@ -100,7 +101,7 @@ export default function Component() {
     <ReviewCard/>
     </div>
     </div>
-    <Faqs/>
+    <Faqs faqs={faqs} /> 
     <Newsletter/>
     <Footer/>
     </>
@@ -267,7 +268,7 @@ function ReviewCard(){
           width={80}
           src={tayo}
         />
-        <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white mb-8">Tayo Olamide</h5>
+        <h5 className="text-xl font-medium text-gray-900 dark:text-white mb-8">Tayo Olamide</h5>
         <span className="text-sm text-center text-gray-500 dark:text-gray-400">&quot;Will Be There has revolutionized the way I plan events. It&apos;s robust features, coupled with excellent customer support, have made it my go-to platform for all my event needs.&quot;</span>
         <div className="flex mt-4 md:mt-6">
           {[...Array(5)].map((_, index) => (
@@ -287,7 +288,7 @@ function ReviewCard(){
          width={80}
          src={sarah}
        />
-       <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white mb-8">Sarah Kelly</h5>
+       <h5 className="text-xl font-medium text-gray-900 dark:text-white mb-8">Sarah Kelly</h5>
        <span className="text-sm text-center text-gray-500 dark:text-gray-400">&quot;As an event organizer, I rely on Will Be There to streamline my workflow. The ability to manage guest lists, send reminders, and track attendance has made my job so much easier.&quot;</span>
        <div className="flex mt-4 md:mt-6">
         {[...Array(4)].map((_, index) => (
@@ -310,7 +311,7 @@ function ReviewCard(){
         width={80}
         src={alex}
       />
-      <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white mb-8">Alexander Mark</h5>
+      <h5 className="text-xl font-medium text-gray-900 dark:text-white mb-8">Alexander Mark</h5>
       <span className="text-sm text-center text-gray-500 dark:text-gray-400">&quot;I&apos;ve been using this platform for all my event needs, and it&apos;s been a game-changer. The user-friendly interface and comprehensive features have saved me so much time and effort.&quot;</span>
       <div className="flex mt-4 md:mt-6">
     {[...Array(5)].map((_, index) => (
@@ -327,17 +328,22 @@ function ReviewCard(){
 };
 
 
-function Faqs(){
-  const [showContent, setShowContent] = useState({});
-  const [contentHeight, setContentHeight] = useState({});
-  const contentRefs = useRef([]);
+interface Faq {
+  question: string;
+  answer: string;
+}
+
+const Faqs: React.FC<{ faqs: Faq[] }> = ({ faqs }) => {
+  const [showContent, setShowContent] = useState<{ [index: number]: boolean }>({});
+  const [contentHeight, setContentHeight] = useState<{ [index: number]: string }>({});
+  const contentRefs = useRef<Array<React.RefObject<HTMLDivElement>>>([]);
 
   useEffect(() => {
     contentRefs.current = contentRefs.current.slice(0, faqs.length);
   }, [faqs]);
 
   useEffect(() => {
-    const newContentHeight = {};
+    const newContentHeight: { [index: number]: string } = {};
     if (contentRefs.current.length > 0) {
       contentRefs.current.forEach((ref, index) => {
         if (ref && ref.current) {
@@ -348,7 +354,7 @@ function Faqs(){
     }
   }, [faqs, showContent]);
 
-  const toggleContent = (index) => {
+  const toggleContent = (index: number) => {
     setShowContent((prev) => ({
       ...prev,
       [index]: !prev[index],
@@ -356,15 +362,13 @@ function Faqs(){
   };
 
   return (
-    <>
-    <div className='mb-8 flex flex-col items-center justify-center "'>
+    <div className='mb-8 flex flex-col items-center justify-center'>
       <h1 className='text-5xl text-center font-medium mt-12 m-20'>Frequently Asked Questions</h1>
-    {faqs.map(({ question, answer }, index) => (
+      {faqs.map(({ question, answer }, index) => (
         <div className="lg:w-[54vw] w-[90vw]" key={index}>
           <button
             role="button"
-            aria-expanded={showContent[index]}
-            
+            aria-expanded={!!showContent[index]}
             className="flex w-full text-left items-center justify-between rounded border-b-[1px] border-[1px] m-4 text-lg border-gray-900  p-5 font-medium"
             onClick={() => toggleContent(index)}
           >
@@ -386,11 +390,10 @@ function Faqs(){
             <p className="p-5 ">{answer}</p>
           </div>
         </div>
-      ))}     
+      ))}
     </div>
-    </>
-)
-}
+  );
+};
 
 function Newsletter(){
   return(
