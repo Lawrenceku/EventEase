@@ -47,12 +47,7 @@ export default function Register() {
   });
   return (
     <div className="grid max-h-screen md:grid-cols-2 md:gap-4">
-      <div className="hidden min-h-screen bg-[url('/sign-up-img.png')] bg-center bg-no-repeat md:block">
-        <div className="flex h-full items-center justify-center bg-black/70">
-          <p className="inline-block bg-gradient-to-r from-[#002AFF] to-white bg-clip-text text-7xl font-semibold text-transparent">
-            Welcome
-          </p>
-        </div>
+      <div className="hidden min-h-screen  bg-[url('/bread.gif')] bg-center bg-cover bg-no-repeat md:block">
       </div>
       <div className={cn("", openSans.className)}>
         <div className=" m-auto  w-full  space-y-5 px-6 pb-7 text-center md:block xl:w-[30rem] 2xl:w-[40rem]">
