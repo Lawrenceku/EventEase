@@ -41,7 +41,7 @@ export default function SignIn() {
     <div className="flex h-screen">
       <div className="hidden md:block w-1/2 ">
       <div className="hidden min-h-screen  bg-[url('/bread.gif')] bg-center bg-cover bg-no-repeat md:block">
-        
+
       </div>
       </div>
       <div className={cn(
@@ -52,6 +52,7 @@ export default function SignIn() {
         <div className="mx-6 w-full space-y-5 sm:w-[20rem] xl:w-[30rem] 2xl:w-[40rem]">
           <div className="space-y-5 text-center m-auto flex flex-col">
           <Image
+              priority={true}
               alt={"the application logo"}
               width={200}
               height={50}

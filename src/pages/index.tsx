@@ -151,7 +151,7 @@ function HeroSection(){
             </div>
         </div>
         <div className="hidden  lg:mt-0 ml-4 lg:col-span-5 lg:flex lg:justify-end">
-            <Image alt="" className="w-full" src={heroPicture} />
+            <Image priority={true}  alt="" className="w-full" src={heroPicture} />
         </div>                
     </div>
 </section>
@@ -165,7 +165,7 @@ function AboutUs(){
     <div className="grid   py-8  lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
        <div className=" lg:mt-0  lg:col-span-5 lg:flex sm:justify-center">
             <div className="flex justify-center">
-            <Image alt="" className="" src={aboutImg} />
+            <Image priority={true}  alt="" className="" src={aboutImg} />
             </div>
         </div>  
         <div className=" flex flex-col justify-between items-center lg:items-start mr-auto ml-4 mt-10 lg:col-span-7">
@@ -193,7 +193,7 @@ function Features(){
           <section className="  px-4 md:px-16 mb-24 flex justify-around items-start flex-wrap">
         <div className="flex flex-col justify-center items-center w-72 m-8">
           <div className="w-full">
-          <Image alt="" className="w-full" src={eventCreation}/>
+          <Image priority={true}  alt="" className="w-full" src={eventCreation}/>
           </div>
           <div className="text-center">
             <p className="font-medium">Event Creation and Management</p>
@@ -201,21 +201,21 @@ function Features(){
           </div>
         </div>
         <div className="flex flex-col justify-center items-center w-72 m-8">
-          <Image alt="" src={autoEvent}/>
+          <Image priority={true}  alt="" src={autoEvent}/>
           <div className="text-center">
             <p className="font-medium">Automated Event Reminders</p>
             <p>Effortlessly manage your schedule with automated event reminders. Receive timely notifications about event dates, times, and locations, ensuring you never miss an important occasion.</p>
           </div>
         </div>
         <div className="flex flex-col justify-center items-center w-72 m-8">
-          <Image alt="" src={realTime}/>
+          <Image priority={true}  alt="" src={realTime}/>
           <div className="text-center">
             <p className="font-medium">Real Time Event Analytics</p>
             <p>Stay informed and in control of your event with real-time event analytics. Instantly monitor attendance, engagement, and session popularity to ensure a seamless and successful event.</p>
           </div>
         </div>
         <div className="flex flex-col justify-center items-center w-72 m-8 ">
-          <Image alt="" src={guestList}/>
+          <Image priority={true}  alt="" src={guestList}/>
           <div className="text-center">
             <p className="font-medium">Guest List Managers</p>
             <p>Stay organized with our guest list management tool. Easily track RSVPs, manage guest details, and ensure a seamless event experience for all attendees</p>
@@ -263,6 +263,7 @@ function ReviewCard(){
       </div>
       <div className="flex flex-col items-center pb-10">
         <Image
+        priority={true} 
           alt="image"
           height={80}
           width={80}
@@ -272,7 +273,7 @@ function ReviewCard(){
         <span className="text-sm text-center text-gray-500 dark:text-gray-400">&quot;Will Be There has revolutionized the way I plan events. It&apos;s robust features, coupled with excellent customer support, have made it my go-to platform for all my event needs.&quot;</span>
         <div className="flex mt-4 md:mt-6">
           {[...Array(5)].map((_, index) => (
-            <Image  key={index} src={star} alt="star" className={`${index < 5 ? 'text-[#FFA500]' : ''}`} />
+            <Image priority={true}  key={index} src={star} alt="star" className={`${index < 5 ? 'text-[#FFA500]' : ''}`} />
           ))}
         </div>
       </div>
@@ -283,6 +284,7 @@ function ReviewCard(){
      </div>
      <div className="flex flex-col items-center pb-10">
        <Image
+       priority={true} 
          alt="image"
          height={80}
          width={80}
@@ -292,7 +294,7 @@ function ReviewCard(){
        <span className="text-sm text-center text-gray-500 dark:text-gray-400">&quot;As an event organizer, I rely on Will Be There to streamline my workflow. The ability to manage guest lists, send reminders, and track attendance has made my job so much easier.&quot;</span>
        <div className="flex mt-4 md:mt-6">
         {[...Array(4)].map((_, index) => (
-          <Image  key={index} src={star} alt="star" className={`${index < 4 ? 'text-[#FFA500]' : ''}`} />
+          <Image priority={true}   key={index} src={star} alt="star" className={`${index < 4 ? 'text-[#FFA500]' : ''}`} />
         ))}
         <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 0.5L14.6942 8.7918H23.4127L16.3593 13.9164L19.0534 22.2082L12 17.0836L4.94658 22.2082L7.64074 13.9164L0.587322 8.7918H9.30583L12 0.5Z" fill="#bababa"/>
@@ -306,6 +308,7 @@ function ReviewCard(){
     </div>
     <div className="flex flex-col items-center pb-10">
       <Image
+      priority={true} 
         alt="image"
         height={80}
         width={80}
@@ -315,7 +318,7 @@ function ReviewCard(){
       <span className="text-sm text-center text-gray-500 dark:text-gray-400">&quot;I&apos;ve been using this platform for all my event needs, and it&apos;s been a game-changer. The user-friendly interface and comprehensive features have saved me so much time and effort.&quot;</span>
       <div className="flex mt-4 md:mt-6">
     {[...Array(5)].map((_, index) => (
-      <Image alt='' key={index} src={star} className={`${index < 5 ? 'text-[#FFA500]' : ''}`} />
+      <Image priority={true}  alt='' key={index} src={star} className={`${index < 5 ? 'text-[#FFA500]' : ''}`} />
     ))}
   </div>
 
@@ -453,13 +456,13 @@ function Footer(){
             <div className="mt-[18px] flex gap-4">
             <Link
             className="hover:scale-110" target="_blank"
-            href="/"><Image  alt="linkedin icon" loading="lazy"  width="36" height="36" decoding="async" data-nimg="1"  src={linkedinIcon} /></Link><Link
+            href="/"><Image priority={true}  alt="linkedin icon" loading="lazy"  width="36" height="36" decoding="async" data-nimg="1"  src={linkedinIcon} /></Link><Link
             className="hover:scale-110" target="_blank"
-            href="/"><Image  alt="facebook icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src={facebookIcon} /></Link><Link
+            href="/"><Image priority={true}  alt="facebook icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src={facebookIcon} /></Link><Link
             className="hover:scale-110" target="_blank"
-            href=""><Image  alt="instagram icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src={instagramIcon} /></Link><Link
+            href=""><Image priority={true}  alt="instagram icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src={instagramIcon} /></Link><Link
             className="hover:scale-110" target="_blank"
-            href="/"><Image  alt="twitter icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src={twitterIcon} /></Link>
+            href="/"><Image priority={true}  alt="twitter icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1"  src={twitterIcon} /></Link>
             </div>
           </div>
       <div className="mt-6 flex w-full flex-col justify-between  sm:flex-row md:mt-0 md:max-w-[341px]">

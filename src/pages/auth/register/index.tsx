@@ -53,6 +53,7 @@ export default function Register() {
         <div className=" m-auto  w-full  space-y-5 px-6 pb-7 text-center md:block xl:w-[30rem] 2xl:w-[40rem]">
           <div className="m-auto flex flex-col  space-y-5 text-center">
             <Image
+              priority={true}
               alt={"the application logo"}
               width={200}
               height={50}
